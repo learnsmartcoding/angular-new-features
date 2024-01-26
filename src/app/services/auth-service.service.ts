@@ -10,8 +10,8 @@ export class AuthService {
   login() {
     // Simulate login
     this.isLoggedIn = true;
-    //this.userRole = 'admin'; // For example purposes
-    this.userRole = 'support'; // For example purposes
+    this.userRole = 'admin'; // For example purposes
+    //this.userRole = 'support'; // For example purposes
   }
 
   logout() {
