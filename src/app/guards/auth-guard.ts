@@ -39,3 +39,4 @@ export const canActivateGuard: CanActivateFn = (
   }
 };
 
+//(inject(UserToken), route.params['id']);

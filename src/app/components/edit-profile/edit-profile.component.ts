@@ -7,24 +7,23 @@ import { Profile } from '../../services/profile-service';
   standalone: true,
   imports: [],
   templateUrl: './edit-profile.component.html',
-  styleUrl: './edit-profile.component.css'
+  styleUrl: './edit-profile.component.css',
 })
 export class EditProfileComponent {
   public hasUnsavedChanges = true;
- profileInfo!:Profile;
+  profileInfo!: Profile;
 
   constructor(private activatedRoute: ActivatedRoute) {}
-  
+
   ngOnInit() {
     // Call the timer function when the component initializes
     this.startTimer();
 
-    this.activatedRoute.data.subscribe(
-      ({profileInfo}) => {
-          // do something with your resolved data ...
-          this.profileInfo = profileInfo;
-          //alert(JSON.stringify(profileInfo));
-      });
+    this.activatedRoute.data.subscribe(({ profileInfo }) => {
+      // do something with your resolved data ...
+      this.profileInfo = profileInfo;
+      //alert(JSON.stringify(profileInfo));
+    });
   }
 
   startTimer() {
