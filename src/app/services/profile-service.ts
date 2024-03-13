@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { debug } from 'console';
 import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 export interface Profile {
   id: number;
@@ -10,12 +10,14 @@ export interface Profile {
 
 @Injectable({ providedIn: 'root' })
 export class ProfileService {
-  getproduct(id: string) {
-    const product: Profile = {
+  getProfile(id: string) {
+    const profile: Profile = {
       id: +id,
       name: 'Karthik',
       emailId: 'learnsmartcoding@gmail.com',
     };
-    return of(product);
+
+    // Introduce a delay of 2 seconds before emitting the response
+    return of(profile).pipe(delay(1000));
   }
 }
