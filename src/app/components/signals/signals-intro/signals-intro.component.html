@@ -1,0 +1,27 @@
+<h1>Explanation of Signals in Angular</h1>
+
+<h2>Key Concepts:</h2>
+
+<ol>
+  <li><strong>Wrapper Around a Value:</strong> A signal wraps around a value, which can be anything from simple numbers or strings to complex objects like arrays or custom data structures.</li>
+  
+  <li><strong>Getter Function:</strong> To access the value of a signal, you use a getter function. This function retrieves the current value of the signal. For example, if <code>count</code> is a signal representing a number, you'd access its value by calling <code>count()</code>.</li>
+  
+  <li><strong>Granular Tracking:</strong> Angular tracks where signals are used, enabling it to optimize rendering updates. This means that when a signal changes, Angular knows exactly which parts of the UI need to be updated, reducing unnecessary re-renders.</li>
+  
+  <li><strong>Writable and Read-only Signals:</strong> Signals can be writable or read-only. Writable signals allow you to directly update their values using methods like <code>set()</code> or <code>update()</code>, while read-only signals only provide access to their current value.</li>
+  
+  <li><strong>Computed Signals:</strong> Computed signals derive their value from other signals. They are defined using a derivation function, which recalculates the value whenever its dependencies change. Computed signals are lazily evaluated and memoized, meaning that their value is only recalculated when necessary.</li>
+  
+  <li><strong>Effects:</strong> Effects are operations that run whenever one or more signal values change. They are useful for performing side effects like logging, updating external state, or triggering UI updates.</li>
+</ol>
+
+<h2>Benefits of Signals:</h2>
+
+<ol>
+  <li><strong>Reactivity:</strong> Signals enable reactive programming, where changes in state automatically trigger updates in the UI. This makes your application more responsive and interactive.</li>
+  
+  <li><strong>Optimized Rendering:</strong> By tracking dependencies, Angular can optimize rendering updates, ensuring that only the necessary parts of the UI are re-rendered when state changes occur. This improves performance and reduces unnecessary DOM manipulation.</li>
+  
+  <li><strong>Simplicity:</strong> Signals provide a clean and concise way to manage state in your application. They abstract away the complexity of state management, making your code easier to understand and maintain.</li>
+</ol>

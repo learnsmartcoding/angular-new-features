@@ -1,0 +1,42 @@
+<div>
+    <input type="text" [(ngModel)]="newTask" placeholder="Add a new task">
+    <button (click)="addTask()">Add Task</button>
+  </div>
+  <ul>
+    <li *ngFor="let task of tasks()">
+      {{ task }} <button (click)="removeTask(task)">Remove</button>
+    </li>
+  </ul>
+  <button (click)="toggleDetails()">
+    {{ showDetails() ? 'Hide Details' : 'Show Details' }}
+  </button>
+  <div *ngIf="showDetails()">
+    <h3>Explanation and Benefits</h3>
+    <p>
+      <strong>Reactivity:</strong> Using signals makes the component highly reactive. Changes in the tasks list automatically update the UI when tasks are added or removed.
+    </p>
+    <p>
+      <strong>Performance:</strong> Signals optimize rendering updates, reducing unnecessary DOM changes.
+    </p>
+    <p>
+      <strong>Simplicity:</strong> Managing state with signals can simplify the codebase, making it easier to understand and maintain.
+    </p>
+    <h3>Explanation</h3>
+    <ul>
+      <li><strong>Signal:</strong> <code>tasks</code>: A signal to track the current list of tasks.</li>
+      <li><strong>Properties:</strong>
+        <ul>
+          <li><code>newTask</code>: A property bound to the input field to hold the new task text.</li>
+        </ul>
+      </li>
+      <li><strong>Methods:</strong>
+        <ul>
+          <li><code>addTask</code>: Adds a new task to the list if the input is not empty and trims any extra spaces.</li>
+          <li><code>removeTask</code>: Removes a specified task from the list.</li>
+          <li><code>toggleDetails</code>: Toggles the display of the explanation and benefits section.</li>
+        </ul>
+      </li>
+      <li><strong>Template:</strong> The template includes an input field for adding new tasks, a button to add the task, and a list of tasks where each task has a remove button. A show/hide button is added to display the explanation and benefits.</li>
+    </ul>
+  </div>
+  
