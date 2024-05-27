@@ -1,0 +1,37 @@
+<div>
+    <p [style.color]="color()">
+      Current count: {{ count() }}
+    </p>
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+    <button (click)="toggleDetails()">
+      {{ showDetails() ? 'Hide Details' : 'Show Details' }}
+    </button>
+    <div *ngIf="showDetails()">
+      <h3>Explanation and Benefits</h3>
+      <p>
+        <strong>Reactivity:</strong> Using signals makes the component highly reactive. Changes in the count automatically update the color and the displayed count value.
+      </p>
+      <p>
+        <strong>Performance:</strong> Signals optimize rendering updates, reducing unnecessary DOM changes.
+      </p>
+      <p>
+        <strong>Simplicity:</strong> Managing state with signals can simplify the codebase, making it easier to understand and maintain.
+      </p>
+      <h3>Explanation</h3>
+      <ul>
+        <li><strong>Signal:</strong> <code>count</code>: A signal to track the current count value.</li>
+        <li><strong>Computed Signal:</strong> <code>color</code>: A computed signal that calls <code>countColor</code> with the current count value and returns a color string based on the count.</li>
+        <li><strong>Methods:</strong>
+          <ul>
+            <li><code>increment</code>: Increases the count by 1.</li>
+            <li><code>decrement</code>: Decreases the count by 1.</li>
+            <li><code>toggleDetails</code>: Toggles the display of the details section.</li>
+            <li><code>countColor</code>: A method that returns a color string based on the count value. The computed signal calls this method and directly returns the string.</li>
+          </ul>
+        </li>
+        <li><strong>Template:</strong> The template binds the color of the paragraph to the <code>color</code> computed signal. Two buttons are provided to increment and decrement the count. A button is added to show/hide the explanation and benefits.</li>
+      </ul>
+    </div>
+  </div>
+  
